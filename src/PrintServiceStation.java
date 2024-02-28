@@ -1,40 +1,38 @@
 public class PrintServiceStation implements ServiceStation {
     @Override
-    public void check(Bicycle[] bicycle) {
-        for (int i = 0; i < bicycle.length; i++) {
-            System.out.println("Обслуживаем " + bicycle[i].getModelName());
-            for (int j = 0; j < bicycle[i].getWheelsCount(); j++) {
-                System.out.println("Меняем покрышку");
-            }
+    public void check(Transport[] transports) {
+        if (transports[0] instanceof Bicycle) {
+            for (int i = 0; i < transports.length; i++) {
+                System.out.println("Обслуживаем " + transports[i].getModelName());
+                for (int j = 0; j < transports[i].getWheelsCount(); j++) {
+                    System.out.println("Меняем покрышку");
+                }
 
-            System.out.println();
+                System.out.println();
+            }
         }
-    }
+        else if (transports[0] instanceof Car) {
+            for (int i = 0; i < transports.length; i++) {
+                System.out.println("Обслуживаем " + transports[i].getModelName());
+                for (int j = 0; j < transports[i].getWheelsCount(); j++) {
+                    System.out.println("Меняем покрышку");
+                }
+                System.out.println("Проверяем двигатель");
 
-    @Override
-    public void check(Car[] car) {
-        for (int i = 0; i < car.length; i++) {
-            System.out.println("Обслуживаем " + car[i].getModelName());
-            for (int j = 0; j < car[i].getWheelsCount(); j++) {
-                System.out.println("Меняем покрышку");
+                System.out.println();
             }
-            System.out.println("Проверяем двигатель");
-
-            System.out.println();
         }
-    }
+        else {
+            for (int i = 0; i < transports.length; i++) {
+                System.out.println("Обслуживаем " + transports[i].getModelName());
+                for (int j = 0; j < transports[i].getWheelsCount(); j++) {
+                    System.out.println("Меняем покрышку");
+                }
+                System.out.println("Проверяем двигатель");
+                System.out.println("Проверяем прицеп");
 
-    @Override
-    public void check(Truck[] truck) {
-        for (int i = 0; i < truck.length; i++) {
-            System.out.println("Обслуживаем " + truck[i].getModelName());
-            for (int j = 0; j < truck[i].getWheelsCount(); j++) {
-                System.out.println("Меняем покрышку");
+                System.out.println();
             }
-            System.out.println("Проверяем двигатель");
-            System.out.println("Проверяем прицеп");
-
-            System.out.println();
         }
     }
 }
