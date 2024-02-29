@@ -1,3 +1,5 @@
+import com.sun.jdi.connect.Transport;
+
 public class Main {
     public static void main(String[] args) {
         Car[] cars = {
@@ -15,9 +17,14 @@ public class Main {
                 new Bicycle("bicycle2", 2),
         };
 
-        ServiceStation printServiceStation = new PrintServiceStation();
-        printServiceStation.check(cars);
-        printServiceStation.check(trucks);
-        printServiceStation.check(bicycles);
+        for (int i = 0; i < cars.length; i++) {
+            cars[i].check();
+        }
+        for (int i = 0; i < trucks.length; i++) {
+            trucks[i].check();
+        }
+        for (int i = 0; i < bicycles.length; i++) {
+            bicycles[i].check();
+        }
     }
 }
