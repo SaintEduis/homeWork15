@@ -7,9 +7,7 @@ public class Car extends Transport implements ServiceStation{
     @Override
     public void check() {
         System.out.println("Обслуживаем " + this.getModelName());
-        for (int j = 0; j < this.getWheelsCount(); j++) {
-            System.out.println("Меняем покрышку");
-        }
+        super.check();
         System.out.println("Проверяем двигатель");
 
         System.out.println();

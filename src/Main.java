@@ -2,29 +2,19 @@ import com.sun.jdi.connect.Transport;
 
 public class Main {
     public static void main(String[] args) {
-        Car[] cars = {
+        Service serviceStation = new Service();
+
+        ServiceStation[] vehicle = {
                 new Car("car1", 4),
                 new Car("car2", 4),
-        };
-
-        Truck[] trucks = {
                 new Truck("truck1", 6),
                 new Truck("truck2", 8),
-        };
-
-        Bicycle[] bicycles = {
                 new Bicycle("bicycle1", 2),
                 new Bicycle("bicycle2", 2),
         };
 
-        for (int i = 0; i < cars.length; i++) {
-            cars[i].check();
-        }
-        for (int i = 0; i < trucks.length; i++) {
-            trucks[i].check();
-        }
-        for (int i = 0; i < bicycles.length; i++) {
-            bicycles[i].check();
+        for (int i = 0; i < vehicle.length; i++) {
+            serviceStation.service(vehicle[i]);
         }
     }
 }
